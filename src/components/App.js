@@ -4,13 +4,14 @@ import SearchBar from './SearchBar';
 import ImageList from './ImageList';
 
 class App extends React.Component {
-  state = { images: [] };
+  state = { images: [], page: 1 };
 
   onFormSubmit = async term => {
     const response = await unsplash.get('/search/photos', {
-      params: { query: term, per_page: 30 }
+      params: { query: term, per_page: 25, page: this.state.page }
     });
-    this.setState({ images: response.data.results });
+    this.setState({ images: this.state.images.concat(response.data.results) });
+    this.setState({ page: this.state.page + 1 });
   };
 
   render() {
