@@ -6,9 +6,19 @@
   text-align: center;
 }
 
- .image-list img {
+.image-list img {
   width: 100%;
   height: auto;
   text-align: center;
   border: 1px solid #e7dede;
+}
+
+.my-masonry-grid div {
+  max-width: 250px;
+  display: flex;
+  margin: 5px;
+}
+
+.imgA {
+  width: 100%;
 }
