@@ -23,13 +23,13 @@ class ImageCard extends React.Component {
   render() {
     const { description, urls } = this.props.image;
     return (
-      <div
-        style={{
-          height: 'auto',
-          gridRowEnd: `span ${this.state.spans}`
-        }}>
-        <img ref={this.imageRef} alt={description} src={urls.regular} />
-      </div>
+        <div
+            style={{
+              marginBottom: '1em',
+              display: 'inline-block'
+            }}>
+          <img ref={this.imageRef} alt={description} src={urls.regular} />
+        </div>
     );
   }
 }
